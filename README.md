@@ -1,6 +1,6 @@
 # mailphisher
 ## Description
-This is a burp plugin written in python that will help detect email content injection vulnerabilities. If you don't know what an email content injection vulnerability looks like, please read the following (http://shpendk13.blogspot.nl/2015/12/email-content-html-injection.html)[blogpost]
+This is a burp plugin written in python that will help detect email content injection vulnerabilities. If you don't know what an email content injection vulnerability looks like, please read the following http://shpendk13.blogspot.nl/2015/12/email-content-html-injection.html
 The script checks all **requests** for the specified payload (see Configure below) and whenever it detects that you have sent it (yes you have to manually send it!) it will login to the configured email address and check the received emails for the payload. If it successfully detects the payload was sent to your email without being encoded, it'll raise a tenative report inside burp. 
 -Warning: Make sure to use a test account as the script marks all emails it processes as read. 
 
@@ -8,7 +8,7 @@ The script checks all **requests** for the specified payload (see Configure belo
 ## Installation
 -Warning. See below how to configure the script before loading it.
 
-This plugin requires jython to be configured inside burp. See (https://portswigger.net/burp/help/extender.html#options_pythonenv)[here] for more information on how to do that. Once jython is in place, go to Burp Extender and in the extensions tab, click "Add", select "Python" for the extension tab and find the script using "Select file". Click "next" and the you are ready to go. 
+This plugin requires jython to be configured inside burp. See https://portswigger.net/burp/help/extender.html#options_pythonenv for more information on how to do that. Once jython is in place, go to Burp Extender and in the extensions tab, click "Add", select "Python" for the extension tab and find the script using "Select file". Click "next" and the you are ready to go. 
 
 ## Configure
 The script needs to be configured with your email address, password and the imap hostname of your mail provider. You can set these values in the "constants" section at the top of the script. You can also chose the desired payload that will trigger the email lookup as mentioned in the description. note that it currently does **not** work with gmail, for google has some security settings which suck. Other providers should work fine
